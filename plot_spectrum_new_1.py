@@ -6,11 +6,11 @@ def main():
     """
     Usage:
         ./plot_spectrum_new.py file1.spectrum file2.spectrum ...
-    All spectra will be plotted on one figure and saved to 'combined_spectrum.pdf'.
+    All spectra will be plotted on one figure and saved to 'combined_spectrum.pdf' for example in this code which can be changed in line 89.
     """
 
     import matplotlib.pyplot as plt
-    import spectral_tools_new as spt  # same module as in your code
+    import spectral_tools_new as spt  
     import numpy as np
 
     # Gather all filenames from command-line arguments
@@ -29,7 +29,7 @@ def main():
     gauss_fwhm = 0.025
     print(f"A full width at half maximum of {gauss_fwhm} eV is used. Modify this if needed.")
 
-    # We will track overall min/max X and max Y so the final axes cover all data sets
+    
     global_min_x = float('inf')
     global_max_x = -float('inf')
     global_max_y = 0.0
@@ -49,7 +49,7 @@ def main():
         nx = 1000
         step = abs(x_end - x_0)/nx
 
-        # Compute convolved spectrum; taking absolute in case some energies are negative
+        
         spectrum = spt.compute_spectrum(abs(x_0), abs(x_end), step,
                                         abs(data[:, 0]), data[:, 1],
                                         gauss_fwhm)
