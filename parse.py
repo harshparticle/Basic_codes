@@ -96,7 +96,7 @@ def main():
     # Update the file path below to point to your Q-Chem frequency output file.
     freq_file = "/Users/harshsmac/Downloads/ezFCF-master/azulene_S0_freq.out"
    
-    # The number of atoms in the molecule (for azulene, 18 atoms are expected)
+    # The number of atoms in the molecule 
     natoms = 18
 
     # Open and read the entire file content.
@@ -115,7 +115,6 @@ def main():
         print(f"Mode {mode_idx}: Frequency = {freq:.2f} cm⁻¹")
         print("Displacement vectors for each atom:")
         for i, vector in enumerate(mode):
-            # Use the extracted atom label if available; otherwise, use a default index.
             label = atom_labels[i] if i < len(atom_labels) else f"Atom {i+1}"
             x, y, z = vector
             print(f"  {label}: x = {x:.4f}, y = {y:.4f}, z = {z:.4f}")
